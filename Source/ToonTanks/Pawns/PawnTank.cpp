@@ -8,9 +8,7 @@
 // Sets default values
 APawnTank::APawnTank()
 {
-	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
 	SpringArm->SetupAttachment(RootComponent);
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
@@ -30,13 +28,11 @@ void APawnTank::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	Rotate();
 	Move();
-
 	if (PlayerControllerRef)
 	{
 		FHitResult TraceHitResult;
 		PlayerControllerRef->GetHitResultUnderCursor(ECC_Visibility, false, TraceHitResult);
 		FVector HitLocation = TraceHitResult.ImpactPoint;
-
 		RotateTurret(HitLocation);
 	}
 }
