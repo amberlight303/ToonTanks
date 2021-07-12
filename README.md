@@ -1,6 +1,6 @@
 # ToonTanks
 
-It's a simple game developed with Unreal Engine 4. The goal is to eliminate 4 turrets. Turrets and the player's tank take 2 hits to explode.
+It's a simple game developed with Unreal Engine 4.26. The goal is to eliminate 4 turrets. Turrets and the player's tank take 2 hits to explode.
 
 Features implemented:
 - Countdown & result widgets, disabling of a player input
