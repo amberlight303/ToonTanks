@@ -14,10 +14,8 @@ APawnTurret::APawnTurret()
 void APawnTurret::BeginPlay()
 {
 	Super::BeginPlay();
-
 	PlayerPawn = Cast<APawnTank>(UGameplayStatics::GetPlayerPawn(this, 0));
 	GetWorld()->GetTimerManager().SetTimer(FireRateTimerHandle, this, &APawnTurret::CheckFireCondition, FireRate, true);
-
 }
 
 void APawnTurret::Tick(float DeltaTime)
@@ -27,7 +25,6 @@ void APawnTurret::Tick(float DeltaTime)
 	{
 		return;
 	}
-
 	RotateTurret(PlayerPawn->GetActorLocation());
 }
 
@@ -38,7 +35,6 @@ void APawnTurret::CheckFireCondition()
 	{
 		Fire();
 	}
-	
 }
 
 float APawnTurret::ReturnDistanceToPlayer()

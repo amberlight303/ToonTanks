@@ -29,13 +29,11 @@ void ATankGameModeBase::ActorDied(AActor* DeadActor)
     else if (APawnTurret* DestroyedTurret = Cast<APawnTurret>(DeadActor))
     {
         DestroyedTurret->HandleDestruction();
-
         if (--TargetTurrets == 0)
         {
             HandleGameOver(true);
         }
     }
-
 }
 
 void ATankGameModeBase::HandleGameStart()
